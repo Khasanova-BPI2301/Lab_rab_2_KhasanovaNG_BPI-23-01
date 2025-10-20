@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:L_R_2_Khasanova_BPI_23_01"
         mc:Ignorable="d"
-        Title="Maтематическое выражение" Height="450" Width="800">
-    <Grid>
+        Title="Maтематическое выражение" 
+        Height="450" Width="800"
+        WindowStartupLocation="CenterScreen"
+        SizeToContent="Height">
+    <StackPanel>
+        <RadioButton IsChecked="True" Margin="5" Name="Radio1">
+            <WrapPanel>
+                <Image Source="p1.png" Height="30"/>
+                <GroupBox Header="Parametrs">
+                    <Grid>
+                        <Grid.RowDefinitions
+                    </Grid>
+                </GroupBox>
+                          
+            </WrapPanel>
+            
+        
 
-    </Grid>
+    </StackPanel>
 </Window>
