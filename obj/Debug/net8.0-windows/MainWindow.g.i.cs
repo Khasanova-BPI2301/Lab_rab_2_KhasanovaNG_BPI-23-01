@@ -205,7 +205,7 @@ namespace L_R_2_Khasanova_BPI_23_01 {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/L_R_2_Khasanova_BPI_23_01;V1.0.0.0;component/mainwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/L_R_2_Khasanova_BPI_23_01;component/mainwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\MainWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
