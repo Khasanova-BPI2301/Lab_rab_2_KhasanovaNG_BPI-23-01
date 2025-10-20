@@ -10,6 +10,7 @@
         WindowStartupLocation="CenterScreen"
         SizeToContent="Height">
     <StackPanel>
+        
         <RadioButton IsChecked="True" Margin="5" Name="Radio1">
             <WrapPanel>
                 <Image Source="p1.png" Height="30"/>
@@ -39,8 +40,38 @@
                         </ComboBox>
                     </Grid>
                 </GroupBox>
-
             </WrapPanel>
         </RadioButton>
+
+        <RadioButton Margin="5" Name="Radio2">
+            <StackPanel>
+                <Image Source="p2.png" Height="30"/>
+                <GroupBox>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="a" Grid.Column="0" Grid.Row="0"/>
+                        <TextBox Text="0,00" Grid.Column="1" Grid.Row="0" MinWidth="70" Name="R2TextA"/>
+                        <Label Content="b" Grid.Column="2" Grid.Row="0"/>
+                        <TextBox Text="0,00" Grid.Column="3" Grid.Row="0" MinWidth="70" Name="R2TextB"/>
+                        <Label Content="f" Grid.Column="0" Grid.Row="1"/>
+                        <ComboBox Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" SelectedIndex="0" Name="R2ComboF"/>
+                    </Grid>
+                </GroupBox>
+            </StackPanel>
+        </RadioButton>
+        
+
     </StackPanel>
+
+   
+    
 </Window>
