@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:L_R_2_Khasanova_BPI_23_01"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Maтематическое выражение" Height="450" Width="800">
     <Grid>
 
     </Grid>
