@@ -14,5 +14,28 @@ namespace L_R_2_Khasanova_BPI_23_01.Classes
         public double X { get; set; }
         public double F {  get; set; }
         public double Y { get; set; }
+
+        public double CalculateVariant16 ()
+        {
+            double sum = 0.0;
+
+            for (int i = 0; i <= N; i++)
+            {
+                for (int j = 0; j <= K; j++)
+                {
+                    double numerator = Math.Pow(A, i-1) * Math.Pow(X, 1) + Math.Pow(F, j) * Math.Pow(Y, j);
+                    double denominator = (i + 1) * j;
+
+                    if (Math.Abs(denominator) < 1e-10)
+                        throw new DivideByZeroException($"Деление на ноль при i={i}, j={j}");
+
+                    sum += numerator / denominator;
+                        
+                }
+            }
+
+            return sum;
+        }
+
     }
 }
