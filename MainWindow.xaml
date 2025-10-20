@@ -68,7 +68,13 @@
                 </GroupBox>
             </StackPanel>
         </RadioButton>
-        
+
+        <RadioButton Margin="5" x:Name="Radio3">
+            <StackPanel>
+                
+            </StackPanel>
+            
+        </RadioButton>
 
     </StackPanel>
 
