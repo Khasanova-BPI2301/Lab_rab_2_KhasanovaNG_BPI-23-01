@@ -120,18 +120,23 @@
                 <TextBlock Text="Вариант 16: Z = ΣΣ [a^(i-1)*x^i + f^j*y^j] / [(i+1)*j]" 
                    FontSize="14" FontWeight="Bold" Margin="0,0,0,5"/>
                 <WrapPanel>
-                    <Label Content="N" VerticalAlignment="Center"/>
-                    <TextBox Text="2" MinWidth="50" Name="R5TextN"/>
+                    <Label Content="N =" VerticalAlignment="Center"/>
+                    <TextBox MinWidth="50" Name="R5TextN"/>
+
                     <Label Content="K" VerticalAlignment="Center"/>
-                    <TextBox Text="2" MinWidth="50" Name="R5TextK"/>
+                    <TextBox MinWidth="50" Name="R5TextK"/>
+                    
                     <Label Content="a" VerticalAlignment="Center"/>
-                    <TextBox Text="2" MinWidth="50" Name="R5TextA"/>
+                    <TextBox MinWidth="50" Name="R5TextA"/>
+                    
                     <Label Content="x" VerticalAlignment="Center"/>
-                    <TextBox Text="1" MinWidth="50" Name="R5TextX"/>
+                    <TextBox  MinWidth="50" Name="R5TextX"/>
+                    
                     <Label Content="f" VerticalAlignment="Center"/>
-                    <TextBox Text="1" MinWidth="50" Name="R5TextF"/>
+                    <TextBox  MinWidth="50" Name="R5TextF"/>
+                    
                     <Label Content="y" VerticalAlignment="Center"/>
-                    <TextBox Text="1" MinWidth="50" Name="R5TextY"/>
+                    <TextBox  MinWidth="50" Name="R5TextY"/>
                 </WrapPanel>
             </StackPanel>
         </RadioButton>

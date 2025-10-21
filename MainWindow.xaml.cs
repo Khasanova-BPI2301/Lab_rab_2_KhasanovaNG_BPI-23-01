@@ -50,7 +50,7 @@ namespace L_R_2_Khasanova_BPI_23_01
 
         private void Calc_Click(object sender, RoutedEventArgs e)
         {
-            if(Radio1.IsChecked.GetValueOrDefault())
+            if (Radio1.IsChecked.GetValueOrDefault())
             {
                 double a = Convert.ToDouble(R1TextA.Text);
                 double f = Convert.ToDouble(R1ComboF.Text);
@@ -95,29 +95,53 @@ namespace L_R_2_Khasanova_BPI_23_01
 
             if (Radio5.IsChecked.GetValueOrDefault())
             {
-                int n = Convert.ToInt32(R5TextN.Text);
-                int k = Convert.ToInt32(R5TextK.Text);
-                double a = Convert.ToDouble(R5TextA.Text);
-                double x = Convert.ToDouble(R5TextX.Text);
-                double f = Convert.ToDouble(R5TextF.Text);
-                double y = Convert.ToDouble(R5TextY.Text);
+                if (string.IsNullOrWhiteSpace(R5TextN.Text) ||
+        string.IsNullOrWhiteSpace(R5TextK.Text) ||
+        string.IsNullOrWhiteSpace(R5TextA.Text) ||
+        string.IsNullOrWhiteSpace(R5TextX.Text) ||
+        string.IsNullOrWhiteSpace(R5TextF.Text) ||
+        string.IsNullOrWhiteSpace(R5TextY.Text))
+                {
+                    MessageBox.Show("Заполните все поля!", "Ошибка",
+                       MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+                try
+                {
+                    int n = Convert.ToInt32(R5TextN.Text);
+                    int k = Convert.ToInt32(R5TextK.Text);
+                    double a = Convert.ToDouble(R5TextA.Text);
+                    double x = Convert.ToDouble(R5TextX.Text);
+                    double f = Convert.ToDouble(R5TextF.Text);
+                    double y = Convert.ToDouble(R5TextY.Text);
 
-                calculator.N = n;
-                calculator.K = k;
-                calculator.A = a;
-                calculator.X = x;
-                calculator.F = f;
-                calculator.Y = y;
+                    calculator.N = n;
+                    calculator.K = k;
+                    calculator.A = a;
+                    calculator.X = x;
+                    calculator.F = f;
+                    calculator.Y = y;
 
-                double result = calculator.CalculateVariant16();
+                    double result = calculator.CalculateVariant16();
 
-                this.Title = "Ответ: " + result.ToString("F");
-            }
+                    this.Title = "Ответ: " + result.ToString("F");
+                }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка ввода: " + ex.Message, "Ошибка",
+                       MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
+
+
+
+
 
 
         }
         }
-        
 
-       
-    }
+
+
+    } }
