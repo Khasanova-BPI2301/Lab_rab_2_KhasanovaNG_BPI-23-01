@@ -23,7 +23,7 @@ namespace L_R_2_Khasanova_BPI_23_01.Classes
             {
                 for (int j = 0; j <= K; j++)
                 {
-                    double numerator = Math.Pow(A, i-1) * Math.Pow(X, 1) + Math.Pow(F, j) * Math.Pow(Y, j);
+                    double numerator = Math.Pow(A, i-1) * Math.Pow(X, i) + Math.Pow(F, j) * Math.Pow(Y, j);
                     double denominator = (i + 1) * j;
 
                     if (Math.Abs(denominator) < 1e-10)

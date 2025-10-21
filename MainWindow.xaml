@@ -6,9 +6,10 @@
         xmlns:local="clr-namespace:L_R_2_Khasanova_BPI_23_01"
         mc:Ignorable="d"
         Title="Maтематическое выражение" 
-        Height="450" Width="800"
+        Height="500" Width="500"
         WindowStartupLocation="CenterScreen"
         SizeToContent="Height">
+    
     <StackPanel>
         
         <RadioButton IsChecked="True" Margin="5" Name="Radio1">
@@ -141,7 +142,7 @@
             </StackPanel>
         </RadioButton>
 
-        <Button Content="Считать" Width="100" Click="Calc_Click"/>
+        <Button Content="Считать" Width="100" Click="Calc_Click" Margin="0,10,0,10"/>
     </StackPanel>
 
    
