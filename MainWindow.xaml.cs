@@ -42,6 +42,10 @@ namespace L_R_2_Khasanova_BPI_23_01
             R3ComboD.Items.Add(-1);
             R3ComboD.Items.Add(0);
             R3ComboD.Items.Add(1);
+
+            R4ComboC.Items.Add(0);
+            R4ComboC.Items.Add(1);
+            R4ComboC.Items.Add(2);
         }
 
         private void Calc_Click(object sender, RoutedEventArgs e)
@@ -74,25 +78,42 @@ namespace L_R_2_Khasanova_BPI_23_01
 
             if (Radio4.IsChecked.GetValueOrDefault())
             {
-                int n = Convert.ToInt32(R4TextN.Text);
-                int k = Convert.ToInt32(R4TextK.Text);
+                int c = Convert.ToInt32(R4ComboC.Text);
+                int d = Convert.ToInt32(R4TextD.Text);
                 double a = Convert.ToDouble(R4TextA.Text);
-                double x = Convert.ToDouble(R4TextX.Text);
-                double f = Convert.ToDouble(R4TextF.Text);
-                double y = Convert.ToDouble(R4TextY.Text);
+
+
+
+                double sum = 0.0;
+                for (int i = 0; i <= d; i++)
+                {
+                    sum += (c * Math.Pow(a, i)) / (i + 1);
+                }
+
+                this.Title = "Ответ: " + sum.ToString("F");
+            }
+
+            if (Radio5.IsChecked.GetValueOrDefault())
+            {
+                int n = Convert.ToInt32(R5TextN.Text);
+                int k = Convert.ToInt32(R5TextK.Text);
+                double a = Convert.ToDouble(R5TextA.Text);
+                double x = Convert.ToDouble(R5TextX.Text);
+                double f = Convert.ToDouble(R5TextF.Text);
+                double y = Convert.ToDouble(R5TextY.Text);
 
                 calculator.N = n;
                 calculator.K = k;
                 calculator.A = a;
                 calculator.X = x;
-                calculator.Y = y;
                 calculator.F = f;
+                calculator.Y = y;
 
                 double result = calculator.CalculateVariant16();
 
                 this.Title = "Ответ: " + result.ToString("F");
-
             }
+
 
         }
         }
