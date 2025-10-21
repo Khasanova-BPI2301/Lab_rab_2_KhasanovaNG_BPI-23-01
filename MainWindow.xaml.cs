@@ -22,7 +22,7 @@ namespace L_R_2_Khasanova_BPI_23_01
         {
             InitializeComponent();
 
-            calculator = FunctionCalculator();
+            calculator = new FunctionCalculator();
 
             R1ComboF.Items.Add(4);
             R1ComboF.Items.Add(5);
@@ -44,8 +44,59 @@ namespace L_R_2_Khasanova_BPI_23_01
             R3ComboD.Items.Add(1);
         }
 
+        private void Calc_Click(object sender, RoutedEventArgs e)
+        {
+            if(Radio1.IsChecked.GetValueOrDefault())
+            {
+                double a = Convert.ToDouble(R1TextA.Text);
+                double f = Convert.ToDouble(R1ComboF.Text);
+                this.Title = "Ответ: " + Math.Sin(f * a).ToString("F");
+            }
+
+            if (Radio2.IsChecked.GetValueOrDefault())
+            {
+                double a = Convert.ToDouble(R2TextA.Text);
+                double b = Convert.ToDouble(R2TextB.Text);
+                double f = Convert.ToDouble(R2ComboF.Text);
+                this.Title = "Ответ: "
+                    + (Math.Cos(f * a) + Math.Sin(f * b)).ToString("F");
+            }
+
+            if (Radio3.IsChecked.GetValueOrDefault())
+            {
+                double a = Convert.ToDouble(R3TextA.Text);
+                double b = Convert.ToDouble(R3TextB.Text);
+                double c = Convert.ToDouble(R3ComboC.Text);
+                double d = Convert.ToDouble(R3ComboD.Text);
+                this.Title = "Ответ: "
+                     + (c * a * a + d * b * b).ToString("F");
+            }
+
+            if (Radio4.IsChecked.GetValueOrDefault())
+            {
+                int n = Convert.ToInt32(R4TextN.Text);
+                int k = Convert.ToInt32(R4TextK.Text);
+                double a = Convert.ToDouble(R4TextA.Text);
+                double x = Convert.ToDouble(R4TextX.Text);
+                double f = Convert.ToDouble(R4TextF.Text);
+                double y = Convert.ToDouble(R4TextY.Text);
+
+                calculator.N = n;
+                calculator.K = k;
+                calculator.A = a;
+                calculator.X = x;
+                calculator.Y = y;
+                calculator.F = f;
+
+                double result = calculator.CalculateVariant16();
+
+                this.Title = "Ответ: " + result.ToString("F");
+
+            }
+
+        }
+        }
         
 
        
     }
-}
