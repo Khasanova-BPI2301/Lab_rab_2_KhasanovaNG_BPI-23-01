@@ -12,12 +12,12 @@
     
     <StackPanel>
         
-        <RadioButton IsChecked="True" Margin="5" Name="Radio1">
+        <RadioButton GroupName="Formulas" Margin="5" Name="Radio1">
             <StackPanel>
-                <TextBlock Text="sin(f·a), f ∈ {4,5,6,7,8,9}" 
-                   FontSize="14" FontWeight="Bold" Margin="0,0,0,5"/>
+                <Image Source="/Images/p1.png" Height="25"/>
                 <WrapPanel>
-                    <GroupBox Header="Parametrs">
+                    <GroupBox Header="Parametrs"
+                              IsEnabled="{Binding IsChecked,RelativeSource={RelativeSource AncestorType=RadioButton} }">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
@@ -33,7 +33,6 @@
                             <Label Content="f" Grid.Column="0" Grid.Row="1"/>
                             <ComboBox Grid.Column="1" Grid.Row="1" SelectedIndex="0"
         Name="R1ComboF">
-
                                 <ComboBoxItem>4</ComboBoxItem>
                                 <ComboBoxItem>5</ComboBoxItem>
                                 <ComboBoxItem>6</ComboBoxItem>
@@ -48,12 +47,12 @@
             </StackPanel>
         </RadioButton>
 
-        <RadioButton Margin="5" Name="Radio2">
+        <RadioButton GroupName="Formulas" Margin="5" Name="Radio2">
             <StackPanel>
-                <TextBlock Text="cos(f·a) + sin(f·b), f ∈ {10,20,30,40}" 
-                   FontSize="14" FontWeight="Bold" Margin="0,0,0,5"/>
+                <Image Source="/Images/p2.png" Height="20"/>
                 <StackPanel>
-                    <GroupBox>
+                    <GroupBox
+                        IsEnabled="{Binding IsChecked,RelativeSource={RelativeSource AncestorType=RadioButton} }">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
@@ -78,12 +77,12 @@
             </StackPanel>
         </RadioButton>
 
-        <RadioButton Margin="5" x:Name="Radio3">
+        <RadioButton GroupName="Formulas" Margin="5" x:Name="Radio3">
             <StackPanel>
-                <TextBlock Text="c·a² + d·b², c ∈ {0,1}, d ∈ {-1,0,1}" 
-                   FontSize="14" FontWeight="Bold" Margin="0,0,0,5"/>
+                <Image Source="/Images/p3.png" Height="30"/>
                 <StackPanel>
-                    <GroupBox>
+                    <GroupBox
+                        IsEnabled="{Binding IsChecked,RelativeSource={RelativeSource AncestorType=RadioButton} }">
                         <StackPanel Orientation="Horizontal">
                             <Label Content="a"/>
                             <TextBox Text="0,00" MinWidth="50" Name="R3TextA"/>
@@ -101,44 +100,49 @@
             
         </RadioButton>
 
-        <RadioButton Margin="5" Name="Radio4">
+        <RadioButton GroupName="Formulas" Margin="5" Name="Radio4">
             <StackPanel>
-                <TextBlock Text="Z = Σ (c·a^i)/(i+1), i=0..d" 
-                   FontSize="14" FontWeight="Bold" Margin="0,0,0,5"/>
-                <WrapPanel>
-                    <Label Content="c" VerticalAlignment="Center"/>
-                    <ComboBox MinWidth="70" SelectedIndex="0" Name="R4ComboC"/>
-                    <Label Content="d" VerticalAlignment="Center"/>
-                    <TextBox Text="3" Width="50" Name="R4TextD"/>
-                    <Label Content="a" VerticalAlignment="Center"/>
-                    <TextBox Text="2,00" Width="70" Name="R4TextA"/>
-                </WrapPanel>
+                <Image Source="/Images/p4.png" Height="50"/>
+                <GroupBox
+                    IsEnabled="{Binding IsChecked,RelativeSource={RelativeSource AncestorType=RadioButton} }">
+                    <WrapPanel>
+                        <Label Content="c" VerticalAlignment="Center"/>
+                        <ComboBox MinWidth="70" SelectedIndex="0" Name="R4ComboC"/>
+                        <Label Content="d" VerticalAlignment="Center"/>
+                        <TextBox Text="3" Width="50" Name="R4TextD"/>
+                        <Label Content="a" VerticalAlignment="Center"/>
+                        <TextBox Text="2,00" Width="70" Name="R4TextA"/>
+                    </WrapPanel>
+                </GroupBox>
             </StackPanel>
         </RadioButton>
 
-        <RadioButton Margin="5" x:Name="Radio5">
+        <RadioButton GroupName="Formulas" Margin="5" x:Name="Radio5">
             <StackPanel>
-                <TextBlock Text="Вариант 16: Z = ΣΣ [a^(i-1)*x^i + f^j*y^j] / [(i+1)*j]" 
-                   FontSize="14" FontWeight="Bold" Margin="0,0,0,5"/>
-                <WrapPanel>
-                    <Label Content="N =" VerticalAlignment="Center"/>
-                    <TextBox MinWidth="50" Name="R5TextN"/>
+                <Image Source="/Images/p5.png" Height="60"/>
+                <GroupBox 
+                    IsEnabled="{Binding IsChecked,RelativeSource={RelativeSource AncestorType=RadioButton} }">
+                    
+                    <WrapPanel>
+                        <Label Content="N =" VerticalAlignment="Center"/>
+                        <TextBox MinWidth="50" Name="R5TextN"/>
 
-                    <Label Content="K" VerticalAlignment="Center"/>
-                    <TextBox MinWidth="50" Name="R5TextK"/>
-                    
-                    <Label Content="a" VerticalAlignment="Center"/>
-                    <TextBox MinWidth="50" Name="R5TextA"/>
-                    
-                    <Label Content="x" VerticalAlignment="Center"/>
-                    <TextBox  MinWidth="50" Name="R5TextX"/>
-                    
-                    <Label Content="f" VerticalAlignment="Center"/>
-                    <TextBox  MinWidth="50" Name="R5TextF"/>
-                    
-                    <Label Content="y" VerticalAlignment="Center"/>
-                    <TextBox  MinWidth="50" Name="R5TextY"/>
-                </WrapPanel>
+                        <Label Content="K" VerticalAlignment="Center"/>
+                        <TextBox MinWidth="50" Name="R5TextK"/>
+
+                        <Label Content="a" VerticalAlignment="Center"/>
+                        <TextBox MinWidth="50" Name="R5TextA"/>
+
+                        <Label Content="x" VerticalAlignment="Center"/>
+                        <TextBox  MinWidth="50" Name="R5TextX"/>
+
+                        <Label Content="f" VerticalAlignment="Center"/>
+                        <TextBox  MinWidth="50" Name="R5TextF"/>
+
+                        <Label Content="y" VerticalAlignment="Center"/>
+                        <TextBox  MinWidth="50" Name="R5TextY"/>
+                    </WrapPanel>
+                </GroupBox>
             </StackPanel>
         </RadioButton>
 
